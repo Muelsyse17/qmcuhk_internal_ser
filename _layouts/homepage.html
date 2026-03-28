@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+  
+<nav id="navbar">{% include nav.html %}</nav>
+
+{% include welcome_picture.html %}
+<body>
+
+
+
+<main>
+{{ content }}
+</main>
+
+{% include home-footer.html %}
+
+<script src="{{ site.baseurl }}/myscript.js"></script>
+</body>
+</html>

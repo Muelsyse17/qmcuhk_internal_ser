@@ -1,0 +1,449 @@
+$default-side-space:8vw;
+$default-top-space: 12vh;
+$footer-top-padding: 10vh;
+$footer-side-padding: 5vh;
+$member-card-radius: 4px;
+$color1: #f5cab3;
+$color2: #ef9b64;
+$color3: #ae6496;
+$color4: #b9636d;
+
+footer {
+  background: rgba(0, 0, 0, 0.814);
+  color: #fff;
+  padding: $footer-top_padding $footer-side-padding;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-logos {
+    display: flex;
+    gap: 20px;
+    
+    img {
+      height: 12vh;
+      margin-top:auto;
+      margin-bottom:auto;
+    }
+  }
+  .footer-logo {
+    height: 50px; // Set the height of the logos
+    width: auto;
+    margin-bottom: 5px; // Space between the logo and the text label
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      // transform: scale(1.1);
+      opacity: 0.6;
+    }
+  }
+  .footer-info {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    align-items: flex-start; 
+  }
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4vh;
+    .info-contact {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+  }
+  .info-item i {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 2vh;
+  }
+  .info-item address {
+    display: inline; /* Removes the default block display of the address tag */
+  }
+  address {
+    font-style:normal;
+  }
+  .footer-logo-name {
+    font-size: 0.8em; // Adjust the font size as needed
+    text-align: center;
+    color: #ffffff; // Adjust the color to match your website's design
+  }
+  hr {
+    width: 100%;
+  }
+  .footer-logo-link {
+    text-decoration: none;
+  }
+  @media (max-width:768px) {
+    padding: 5vh 5vw;
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+    .footer-logos{
+      width: 100%;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      img {
+        max-width: 100%;
+        max-height: 9vh;
+        height: auto;
+      }
+    }
+    
+    .footer-info {
+      width: 100%;
+      text-align: left;
+      flex-direction: column;
+      gap: 2em;    
+      margin-top: 2em;
+    }
+    .info-item {
+      gap: 2vh;
+      i {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+hr {
+  border: none;  /* Removes the default border */
+  height: 1px;  /* Defines the height/thickness of the line */
+  background-color: #b2b2b2;  /* Sets the color of the line */
+  width: 80%;  /* Sets the width of the line to 80% of its container */
+  margin: 20px auto;  /* Centers the line and gives it space above and below */
+}
+
+
+
+
+nav {
+  background-color: #fff; /* White background */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  position: fixed; /* Stick to the top of the page */
+  width: 100vw;
+  min-height: 80px;
+  z-index: 1000; /* Keep on top of other elements */
+  top: 0;
+  transition: top 0.3s; /* Smooth transition for moving navbar */
+  a{
+    text-decoration:none !important;
+    color: black;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 30px 0px 10px;
+    width: 100vw;
+  }
+  #navlogo {
+    transition: all 0.5s ease-in-out;
+  }
+  #navtext {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 70px; /* Adjust based on logo's height and desired spacing */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Keep it centered regardless of its width */
+    transition: all 0.5s ease-in-out; /* This will animate the text smoothly */
+    z-index: 998; /* Below the logo but above the rest */
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    align-content: start;
+    img {
+      height: 65px; /* Adjust as needed */
+      margin: 0 20px 0 10px;
+    }
+    p {
+      font-size: 1.3rem;
+      margin: 0 0;
+      font-weight:100;
+      @media (max-width: 900px){
+        font-size: 0.9em;
+      }
+    }
+  }
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 0; /* Space between links */
+    margin: 0;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  .nav-links li a:hover {
+    background-color: #f5f5f5; /* Background color on hover */
+  }
+  /* ... Your existing CSS ... */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #efefef;
+    min-width: 10em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    li {
+      padding: 1em 0;
+      text-decoration: none;
+      display: block;
+    }
+  }
+  .dropdown-content li a {
+    color: #333; 
+  }
+  .dropdown-content li a:hover {
+    background-color: #e5e5e5;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover > a {
+    background-color: #f5f5f5; 
+  }
+  @media (max-width: 768px) {
+    min-height:60px;
+    .nav-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-logo {
+      display: none;
+      width: 100%;
+      justify-content: center;
+      margin: 1em 1em 1em 1em;
+      img {
+        display:none;
+      }
+      a {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+  }
+}
+/* Hamburger Menu Styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 30px;
+    height: 25px;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: #333;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .nav-toggle-label span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    padding-inline-start: 1em;
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);
+  }
+
+  .nav-links li {
+    text-align: start;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    padding: 15px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 500px; /* Adjust as needed */
+  }
+}
+
+
+
+
+
+
+body {
+  a {
+    text-decoration-color:$color4;
+    color: inherit;
+    &:hover {
+      color: $color4;
+    }
+    &:visited {
+      color: $color4;
+    }
+  }
+  .wrapper {
+    margin : $default-top-space $default-side-space;
+  }
+  .note-wrapper {
+    max-width: 60em;
+    width: 80%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  }
+  .page-wrapper {
+    box-shadow: 0px -12px 8px 0px rgba(0,0,0,1);
+    padding : $default-top-space $default-side-space;
+    top: -20px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+  }
+  .home-wrapper {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px -12px 8px 0px rgba(92, 92, 92, 0.4);
+    padding : $default-top-space 0;
+    position: relative;
+  }
+  .transparent-divider {
+    height: 80vh;
+  }
+  @media(max-width:768px) {
+    .transparent-divider {
+      height: 20vh;
+    }
+    .home-wrapper {
+      padding: 1em;
+    }
+    .note-wrapper {
+      margin: 65px auto;
+    }
+  }
+}
+
+
+
+
+/* general item */
+.medium-divider {
+  background-color: white;
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  h1 {
+    margin: 0 auto 0 auto;
+  }
+  h2 {
+    margin: 0 auto 0 auto;
+  }
+  p {
+    color:#7b7b7b;
+    margin:  0 auto;
+  }
+  @media (max-width:768px) {
+    min-height: auto;
+    h1, h2, p {
+      margin: 1em 0;
+      font-size: 1.2em;
+    }
+  }
+}
+.large-divider {
+  background-color: white;
+  width: 100%;
+  min-height: 20vh;
+  min-height: 15em;
+  display: flex;
+  align-content: center;
+  h1 {
+    margin: 0 auto 0 auto;
+  }
+  @media (max-width:768px) {
+    min-height: auto;
+    h1, h2, p {
+      margin: 1em 0;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.footer-divider{
+  height:8em;
+  @media (max-width:768px) {
+    height: 4em;
+  }
+}
+
+

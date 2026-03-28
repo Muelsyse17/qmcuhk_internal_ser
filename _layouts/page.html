@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+  
+<nav id="navbar">{% include nav.html %}</nav>
+
+{% if page.banner-path %}
+  {% include banner.html %}
+{% endif%}
+
+
+<body>
+<div class="page-wrapper">
+<main>
+{{ content }}
+</main>
+</div>
+
+
+{% include footer.html %}
+
+<script src="{{ site.baseurl }}/myscript.js"></script>
+</body>
+</html>

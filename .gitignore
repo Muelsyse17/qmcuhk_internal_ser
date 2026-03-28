@@ -1,0 +1,21 @@
+# Generated website directory
+_site/
+
+# Sass cache
+.sass-cache/
+
+# Jekyll cache & metadata
+.jekyll-cache/
+.jekyll-metadata
+
+# Notes graph metadata
+_includes/notes_graph.json
+
+# Obsidian config
+.obsidian/
+
+fast_push.sh
+fast_serve.sh
+.DS_Store
+assets/.DS_Store
+.DS_Store

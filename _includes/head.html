@@ -1,0 +1,63 @@
+<head>
+<!--Fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!--sliding pictures at homepage-->
+
+<!--end Fonts-->
+  <meta charset="UTF-8">
+
+  <!-- 修改 1：添加了 site.baseurl -->
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}{% endif %}">
+
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/icons/atom.ico">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+
+  {% if page.excerpt %}
+  <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}"/>
+  {% else %}
+  <meta property="og:description" content="{{ site.title | strip_html | strip_newlines | truncate: 160 }}"/>
+  {% endif %}
+
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:type" content="article">
+  {% else %}
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:type" content="website">
+  {% endif %}
+
+  {% if page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <!-- 修改 2：给作者的主页链接也加上了 baseurl -->
+  <meta property="article:author" content="{{ site.url }}{{ site.baseurl }}/">
+  {% endif %}
+
+  <!-- 修改 3：添加了 site.baseurl -->
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+  {% if page.image %}
+  <!-- 修改 4：添加了 site.baseurl，如果这里 page.image 本身没有以斜杠开头，可能还需要再调整，但通常这样写是配合绝对路径使用的 -->
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}">
+  {% endif %}
+
+  <title>
+    {% if page.id == "home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }} &mdash; {{ site.title }}
+    {% endif %}
+  </title>
+</head>
