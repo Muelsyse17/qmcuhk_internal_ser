@@ -4,6 +4,14 @@ Maintainer guide for updating the group website. This repo uses Jekyll and is de
 
 ---
 
+## Credits
+
+This project was originally created by [Hong Xunyang](https://github.com/HongXunyang).
+
+All credit goes to the original author.
+
+---
+
 ## Quick reference: what to edit
 
 | Task | File(s) to edit | Where to put images |
